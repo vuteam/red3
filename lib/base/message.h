@@ -47,7 +47,7 @@ class eFixedMessagePump: private eMessagePump, public sigc::trackable
 		/*emit*/ recv_msg(msg);
 	}
 public:
-	Signal1<void,const T&> recv_msg;
+	sigc::signal1<void,const T&> recv_msg;
 	void send(const T &msg)
 	{
 		eMessagePump::send(&msg, sizeof(msg));
